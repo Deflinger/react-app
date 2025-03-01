@@ -1,15 +1,16 @@
+import { ReactNode } from "react";
 
 interface Cardprops {
-    body: string
+    children: ReactNode
 }
 function Card(props : Cardprops) {  
-    const {body} = props;
+    const {children} = props;
     return (
     <div className="card" style={{
         width : "350px",}}
     >
         <div className="card-body">
-            {body}
+            {children}
         </div>
     </div>
   );
