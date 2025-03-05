@@ -1,12 +1,14 @@
 import { useState } from "react";
 import Button from "./components/Button";
 import Card ,{CardBody} from "./components/Card";
-import List from "./components/List";
+import List from './components/List';
 
 function App() {
-
-    const [isLoading, setisLoading]=useState(false);
+    const [data,setData]=useState(["Tanjiro", "Goku", "Eren"]);
+/*
+    const [isLoading, setisLoading]=useState(false); 
     const handleClick= () => setisLoading(!isLoading);
+    //estableciendo el estado del boton 
 
     const list= ["Tanjiro", "Goku", "Eren"];
     const handleSelect = (elemento:string) => {
@@ -31,6 +33,15 @@ function App() {
                 Hola mundo
             </Button>
         </Card>;
+*/
+    const addMinion = () => setData([... data,"Minion"]);
+    const delMinion = () => setData(data.slice(0,-1));
+return <Card>
+    <Button onClick={addMinion}>Agregar</Button>
+    <Button onClick={delMinion}>Eliminar</Button>
+    <List data={data }/>
+    Hola Mundo
+    </Card>;
 }
 
 export default App;
