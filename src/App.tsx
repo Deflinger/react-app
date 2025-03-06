@@ -1,10 +1,12 @@
 import { useState } from "react";
-import Button from "./components/Button";
+import Button from "./components/Button/Index";
 import Card ,{CardBody} from "./components/Card";
 import List from './components/List';
 
 function App() {
+   
     const [data,setData]=useState(["Tanjiro", "Goku", "Eren"]);
+   
 /*
     const [isLoading, setisLoading]=useState(false); 
     const handleClick= () => setisLoading(!isLoading);
@@ -42,6 +44,7 @@ return <Card>
     <List data={data }/>
     Hola Mundo
     </Card>;
+
 }
 
 export default App;

@@ -1,22 +1,24 @@
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
+import styles from "./Button.module.css";
 
 type Props = {
     children:ReactNode;
     isLoading?: boolean;
     onClick: ()=> void;
 }
-  const styles={
-    backgroundColor: "red"
-  };
 
+console.log(styles);
 function Button({children, isLoading, onClick}: Props) {
+  const className = [`btn btn-${isLoading? 'secondary':'primary'}`,styles.  button].join(' ');
+
   return (
     <button 
-    style={styles }
+   
     onClick={onClick}
     disabled={isLoading}
     type="button" 
-    className={`btn btn-${isLoading? 'secondary':'primary'}`}
+    //className={[styles.button, styles.padded].join(' ')}
+    className={className}
     >
         {isLoading ? 'cargando . . . ': children}
 
